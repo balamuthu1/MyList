@@ -11,11 +11,10 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:id="@+id/imgIcon"
             android:scaleType="centerCrop"
-            tools:src="@mipmap/ic_launcher"
-            android:fitsSystemWindows="true"/>
+            tools:src="@mipmap/ic_launcher"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,6 +54,7 @@
             android:text="SHARE"/>
 
         <Button
+            android:id="@+id/btnDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/btnShare"
