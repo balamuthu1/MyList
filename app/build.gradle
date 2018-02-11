@@ -22,9 +22,14 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            debuggable false
+            useProguard true
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
         }
     }
 }
