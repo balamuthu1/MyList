@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_margin_quarter">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgIcon"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher"
+            android:fitsSystemWindows="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTitle"
+            android:layout_below="@+id/imgIcon"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold"
+            tools:text="TITLE"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSubTitle"
+            android:layout_below="@+id/txtTitle"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            tools:text="Subtitle"
+            />
+
+        <View
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginBottom="@dimen/activity_margin_half"
+            android:layout_below="@id/txtSubTitle"/>
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/border"
+            android:background="@android:color/transparent"
+            android:text="SHARE"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnShare"
+            android:layout_below="@+id/border"
+            android:text="DETAILS"
+
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorAccent"/>
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
