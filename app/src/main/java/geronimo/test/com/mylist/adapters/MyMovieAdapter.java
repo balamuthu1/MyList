@@ -45,6 +45,7 @@ public class MyMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final MyMovie myMovie = myMovies.get(position);
         final ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
+        //Set all the information
         //use glide to load images
         Glide.with(context)
                 .load(myMovie.getImgSrc())
@@ -77,6 +78,8 @@ public class MyMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public List<MyMovie> getMovies(){
         return myMovies;
     }
+
+    //Method to share simple texts to other apps through intent
     public void shareContent(String message){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
@@ -84,6 +87,7 @@ public class MyMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         sendIntent.setType("text/plain");
         context.startActivity(sendIntent);
     }
+
     public void add(MyMovie myMovie) {
         myMovies.add(myMovie);
         notifyItemInserted(myMovies.size() - 1);

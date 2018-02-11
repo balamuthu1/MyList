@@ -37,12 +37,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+
+        //Mck the first set of data
         MyMovie myMovie1 = new MyMovie(R.drawable.one,"The king Ragnar","Vikings");
         MyMovie myMovie2 = new MyMovie(R.drawable.two,"The king of the north","Game of thrones");
         MyMovie myMovie3 = new MyMovie(R.drawable.three,"The Star","Star Wars");
         myMovies.add(myMovie1);
         myMovies.add(myMovie2);
         myMovies.add(myMovie3);
+
+        //add all data
         adapter.addAll(myMovies);
 
     }
@@ -90,5 +94,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Store recyclerview states
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(SAVED_LAYOUT_MANAGER, recyclerView.getLayoutManager().onSaveInstanceState());
+    }
+
+    //Restore recyclerview states
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState instanceof Bundle) {
+            layoutManagerSavedState = ((Bundle) savedInstanceState).getParcelable(SAVED_LAYOUT_MANAGER);
+        }
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
